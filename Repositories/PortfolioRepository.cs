@@ -11,8 +11,8 @@ namespace api.Repository
 {
     public class PortfolioRepository : IPortfolioRepository
     {
-        private readonly ApplicationDBContext _context;
-        public PortfolioRepository(ApplicationDBContext context)
+        private readonly ApplicationDbContext _context;
+        public PortfolioRepository(ApplicationDbContext context)
         {
             _context = context;
         }
