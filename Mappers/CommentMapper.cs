@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using api.Dtos.Comment;
 using api.Models;
 
@@ -13,7 +17,7 @@ namespace api.Mappers
                 Title = commentModel.Title,
                 Content = commentModel.Content,
                 CreatedOn = commentModel.CreatedOn,
-               // CreatedBy = commentModel.AppUser.UserName,
+                CreatedBy = commentModel.AppUser.UserName,
                 StockId = commentModel.StockId
             };
         }
@@ -28,15 +32,15 @@ namespace api.Mappers
             };
         }
 
-        // public static Comment ToCommentFromUpdate(this UpdateCommentRequestDto commentDto, int stockId)
-        // {
-        //     return new Comment
-        //     {
-        //         Title = commentDto.Title,
-        //         Content = commentDto.Content,
-        //         StockId = stockId
-        //     };
-        // }
+        public static Comment ToCommentFromUpdate(this UpdateCommentRequestDto commentDto, int stockId)
+        {
+            return new Comment
+            {
+                Title = commentDto.Title,
+                Content = commentDto.Content,
+                StockId = stockId
+            };
+        }
 
     }
 }
